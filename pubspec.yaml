@@ -38,6 +38,9 @@ flutter:
     - family: InterRegular
       fonts:
         - asset: assets/fonts/Inter-Regular.ttf
+    - family: InterLight
+      fonts:
+        - asset: assets/fonts/Inter-Light.ttf
     - family: InterSemiBold
       fonts:
         - asset: assets/fonts/Inter-SemiBold.ttf
