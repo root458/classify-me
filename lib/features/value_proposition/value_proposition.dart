@@ -23,31 +23,47 @@ class ValueProposition extends StatelessWidget {
               ],
             ),
             SizedBox(height: .08 * height),
-            const Text(
-              '''Welcome aboard, Jepkorir!''',
-              style: TextStyle(
-                fontFamily: 'InterSemiBold',
-                color: Color(0xFFFFFFFF),
-                fontSize: 50,
-              ),
-            ),
-            SizedBox(height: .05 * height),
-            const Text(
-              '''We’ve been waiting for you. Let us help you shape your career.''',
-              style: TextStyle(
-                fontFamily: 'InterLight',
-                color: Color(0xFFFFFFFF),
-                fontSize: 30,
-              ),
-            ),
-            SizedBox(height: .05 * height),
-            const Text(
-              '''Your future depends on it!''',
-              style: TextStyle(
-                fontFamily: 'InterLight',
-                color: Color(0xFFFFFFFF),
-                fontSize: 30,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      '''Welcome aboard, Jepkorir!''',
+                      style: TextStyle(
+                        fontFamily: 'InterSemiBold',
+                        color: Color(0xFFFFFFFF),
+                        fontSize: 50,
+                      ),
+                    ),
+                    SizedBox(height: .05 * height),
+                    const Text(
+                      '''We’ve been waiting for you. Let us help you shape your career.''',
+                      style: TextStyle(
+                        fontFamily: 'InterLight',
+                        color: Color(0xFFFFFFFF),
+                        fontSize: 30,
+                      ),
+                    ),
+                    SizedBox(height: .05 * height),
+                    const Text(
+                      '''Your future depends on it!''',
+                      style: TextStyle(
+                        fontFamily: 'InterLight',
+                        color: Color(0xFFFFFFFF),
+                        fontSize: 30,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: .2381 * height,
+                  child: SvgPicture.asset('assets/svgs/right-bar.svg'),
+                ),
+              ],
             ),
             SizedBox(height: .20 * height),
             Row(
