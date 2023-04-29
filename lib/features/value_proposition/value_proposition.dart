@@ -6,25 +6,75 @@ class ValueProposition extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Column(
-        children: [
-          SvgPicture.asset('assets/svgs/angle.svg'),
-          const Text('''Welcome aboard, Jepkorir!'''),
-          const Text(
-            '''We’ve been waiting for you. Let us help you shapeyour career. ''',
-          ),
-          const Text('''Your future depends on it!'''),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              MaterialButton(
-                onPressed: () {},
-                child: const Text('''Start'''),
+      backgroundColor: const Color(0xFF412294),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: .0984 * width),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: .11 * height),
+            Row(
+              children: [
+                SvgPicture.asset('assets/svgs/angle.svg'),
+              ],
+            ),
+            SizedBox(height: .08 * height),
+            const Text(
+              '''Welcome aboard, Jepkorir!''',
+              style: TextStyle(
+                fontFamily: 'InterSemiBold',
+                color: Color(0xFFFFFFFF),
+                fontSize: 50,
               ),
-            ],
-          )
-        ],
+            ),
+            SizedBox(height: .05 * height),
+            const Text(
+              '''We’ve been waiting for you. Let us help you shape your career.''',
+              style: TextStyle(
+                fontFamily: 'InterLight',
+                color: Color(0xFFFFFFFF),
+                fontSize: 30,
+              ),
+            ),
+            SizedBox(height: .05 * height),
+            const Text(
+              '''Your future depends on it!''',
+              style: TextStyle(
+                fontFamily: 'InterLight',
+                color: Color(0xFFFFFFFF),
+                fontSize: 30,
+              ),
+            ),
+            SizedBox(height: .20 * height),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                MaterialButton(
+                  color: const Color(0xFFEB8054),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  minWidth: .191 * width,
+                  height: .0698 * height,
+                  onPressed: () {},
+                  child: const Text(
+                    '''Start''',
+                    style: TextStyle(
+                      fontFamily: 'InterLight',
+                      color: Color(0xFFFFFFFF),
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: .06 * height),
+          ],
+        ),
       ),
     );
   }
