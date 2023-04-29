@@ -1,6 +1,6 @@
-import 'package:classifyme/app/app.dart';
 import 'package:classifyme/bootstrap.dart';
+import 'package:classifyme/classifyme/classifyme.dart';
 
 void main() {
-  bootstrap(() => const App());
+  bootstrap(() => const ClassifyMe());
 }
