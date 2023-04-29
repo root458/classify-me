@@ -1,4 +1,4 @@
-import 'package:classifyme/counter/counter.dart';
+import 'package:classifyme/features/value_proposition/value_proposition.dart';
 import 'package:classifyme/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class ClassifyMe extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const ValueProposition(),
     );
   }
 }
