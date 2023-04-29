@@ -19,7 +19,10 @@ class ValueProposition extends StatelessWidget {
             SizedBox(height: .11 * height),
             Row(
               children: [
-                SvgPicture.asset('assets/svgs/angle.svg'),
+                SvgPicture.asset(
+                  'assets/svgs/angle.svg',
+                  height: .0778 * height,
+                ),
               ],
             ),
             SizedBox(height: .08 * height),
