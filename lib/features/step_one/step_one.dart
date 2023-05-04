@@ -128,7 +128,7 @@ class StepOne extends StatelessWidget {
   }
 }
 
-class InterestItem extends StatelessWidget {
+class InterestItem extends StatefulWidget {
   const InterestItem({
     super.key,
     required this.height,
@@ -139,23 +139,33 @@ class InterestItem extends StatelessWidget {
   final String title;
 
   @override
+  State<InterestItem> createState() => _InterestItemState();
+}
+
+class _InterestItemState extends State<InterestItem> {
+  bool _selected = false;
+  @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      color: const Color(0xFFF1EAE0),
+      color: _selected ? const Color(0xFF412294) : const Color(0xFFF1EAE0),
       shape: const CircleBorder(
         side: BorderSide(
           width: 2,
           color: Color(0xFF412294),
         ),
       ),
-      minWidth: .324 * height,
-      height: .324 * height,
-      onPressed: () {},
+      minWidth: .324 * widget.height,
+      height: .324 * widget.height,
+      onPressed: () {
+        setState(() {
+          _selected = !_selected;
+        });
+      },
       child: Text(
-        title,
-        style: const TextStyle(
+        widget.title,
+        style: TextStyle(
           fontFamily: 'InterLight',
-          color: Color(0xFF412294),
+          color: _selected ? const Color(0xFFF1EAE0) : const Color(0xFF412294),
           fontSize: 20,
         ),
       ),
