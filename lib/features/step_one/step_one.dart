@@ -14,98 +14,100 @@ class StepOne extends StatelessWidget {
       backgroundColor: const Color(0xFFF1EAE0),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: .0984 * width),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  '''Have your interests at heart!''',
-                  style: TextStyle(
-                    fontFamily: 'InterSemiBold',
-                    color: Color(0xFF412294),
-                    fontSize: 50,
-                  ),
-                ),
-                SizedBox(
-                  height: .2381 * height,
-                  child: SvgPicture.asset('assets/svgs/angle.svg'),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: .684 * height,
-              width: double.infinity,
-              child: Stack(
-                fit: StackFit.expand,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Positioned(
-                    left: circlePositions[0].dx,
-                    top: circlePositions[0].dy,
-                    child: InterestItem(
-                      height: height,
-                      title: 'Pharmacy',
+                  const Text(
+                    '''Have your interests at heart!''',
+                    style: TextStyle(
+                      fontFamily: 'InterSemiBold',
+                      color: Color(0xFF412294),
+                      fontSize: 50,
                     ),
                   ),
-                  Positioned(
-                    left: circlePositions[1].dx,
-                    top: circlePositions[1].dy,
-                    child: InterestItem(
-                      height: height,
-                      title: 'Surgery',
-                    ),
+                  SizedBox(
+                    height: .2021 * height,
+                    child: SvgPicture.asset('assets/svgs/angle.svg'),
                   ),
-                  Positioned(
-                    left: circlePositions[2].dx,
-                    top: circlePositions[2].dy,
-                    child: InterestItem(
-                      height: height,
-                      title: 'Laboratories',
+                ],
+              ),
+              SizedBox(
+                height: .684 * height,
+                width: double.infinity,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Positioned(
+                      left: circlePositions[0].dx,
+                      top: circlePositions[0].dy,
+                      child: InterestItem(
+                        height: height,
+                        title: 'Pharmacy',
+                      ),
                     ),
-                  ),
-                  Positioned(
-                    left: circlePositions[3].dx,
-                    top: circlePositions[3].dy,
-                    child: InterestItem(
-                      height: height,
-                      title: 'Nursing',
+                    Positioned(
+                      left: circlePositions[1].dx,
+                      top: circlePositions[1].dy,
+                      child: InterestItem(
+                        height: height,
+                        title: 'Surgery',
+                      ),
                     ),
-                  ),
-                  Positioned(
-                    left: circlePositions[4].dx,
-                    top: circlePositions[4].dy,
-                    child: InterestItem(
-                      height: height,
-                      title: 'Physiotherapy',
+                    Positioned(
+                      left: circlePositions[2].dx,
+                      top: circlePositions[2].dy,
+                      child: InterestItem(
+                        height: height,
+                        title: 'Laboratories',
+                      ),
+                    ),
+                    Positioned(
+                      left: circlePositions[3].dx,
+                      top: circlePositions[3].dy,
+                      child: InterestItem(
+                        height: height,
+                        title: 'Nursing',
+                      ),
+                    ),
+                    Positioned(
+                      left: circlePositions[4].dx,
+                      top: circlePositions[4].dy,
+                      child: InterestItem(
+                        height: height,
+                        title: 'Physiotherapy',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  MaterialButton(
+                    color: const Color(0xFFEB8054),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    minWidth: .191 * width,
+                    height: .0698 * height,
+                    onPressed: () {},
+                    child: const Text(
+                      '''Next''',
+                      style: TextStyle(
+                        fontFamily: 'InterLight',
+                        color: Color(0xFFFFFFFF),
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                 ],
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                MaterialButton(
-                  color: const Color(0xFFEB8054),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  minWidth: .191 * width,
-                  height: .0698 * height,
-                  onPressed: () {},
-                  child: const Text(
-                    '''Next''',
-                    style: TextStyle(
-                      fontFamily: 'InterLight',
-                      color: Color(0xFFFFFFFF),
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: .06 * height),
-          ],
+              SizedBox(height: .06 * height),
+            ],
+          ),
         ),
       ),
     );
