@@ -12,11 +12,12 @@ class StepOne extends StatelessWidget {
         _generateCirclePositions(context, .684 * height, .845 * width);
     return Scaffold(
       backgroundColor: const Color(0xFFF1EAE0),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: .0984 * width),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: .0984 * width),
           child: Column(
             children: [
+              SizedBox(height: .03 * height),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -28,12 +29,13 @@ class StepOne extends StatelessWidget {
                       fontSize: 50,
                     ),
                   ),
-                  SizedBox(
-                    height: .2021 * height,
-                    child: SvgPicture.asset('assets/svgs/angle.svg'),
+                  SvgPicture.asset(
+                    'assets/svgs/angle.svg',
+                    height: .0778 * height,
                   ),
                 ],
               ),
+              SizedBox(height: .1 * height),
               SizedBox(
                 height: .684 * height,
                 width: double.infinity,
