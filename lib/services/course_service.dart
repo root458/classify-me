@@ -16,6 +16,7 @@ class CourseServiceImpl implements CourseService {
     final _endpointUrl = '/recommendations';
 
     try {
+      // ignore: unused_local_variable
       final _resp = await _networkUtil.postReq(
         _endpointUrl,
         body: json.encode(
@@ -35,6 +36,7 @@ class CourseServiceImpl implements CourseService {
     final _endpointUrl = '/recommendations';
 
     try {
+      // ignore: unused_local_variable
       final _resp = await _networkUtil.postReq(
         _endpointUrl,
         body: json.encode(
