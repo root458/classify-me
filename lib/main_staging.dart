@@ -1,6 +1,23 @@
 import 'package:classifyme/bootstrap.dart';
 import 'package:classifyme/classifyme/classifyme.dart';
+import 'package:classifyme/utils/constants.dart';
+import 'package:classifyme/utils/singletons.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
-  bootstrap(() => const ClassifyMe());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  ClassifyMeConfig(
+    values: ClassifyMeValues(
+      baseDomain: 'http://127.0.0.1:8000',
+    ),
+  );
+
+  bootstrap(
+    () => MultiBlocProvider(
+      providers: Singletons.registerCubits(),
+      child: ClassifyMe(),
+    ),
+  );
 }
