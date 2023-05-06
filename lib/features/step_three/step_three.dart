@@ -125,7 +125,12 @@ class StepThree extends StatelessWidget {
                   ),
                   minWidth: .191 * width,
                   height: .0698 * height,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                      ..pop()
+                      ..pop()
+                      ..pop();
+                  },
                   child: const Text(
                     '''Finish''',
                     style: TextStyle(

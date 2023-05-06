@@ -1,3 +1,4 @@
+import 'package:classifyme/features/step_three/step_three.dart';
 import 'package:classifyme/features/step_two/widgets/subject_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -104,7 +105,11 @@ class StepTwo extends StatelessWidget {
                   ),
                   minWidth: .191 * width,
                   height: .0698 * height,
-                  onPressed: () {},
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (context) => const StepThree(),
+                    ),
+                  ),
                   child: const Text(
                     '''Next''',
                     style: TextStyle(

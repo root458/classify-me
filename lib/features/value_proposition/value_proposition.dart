@@ -1,3 +1,4 @@
+import 'package:classifyme/features/step_one/step_one.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -79,7 +80,11 @@ class ValueProposition extends StatelessWidget {
                   ),
                   minWidth: .191 * width,
                   height: .0698 * height,
-                  onPressed: () {},
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (context) => const StepOne(),
+                    ),
+                  ),
                   child: const Text(
                     '''Start''',
                     style: TextStyle(
