@@ -1,6 +1,4 @@
-import 'package:classifyme/features/step_three/cubit/get_course_recommendation_cubit.dart';
-import 'package:classifyme/services/course_service.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+part of classifyme_utils;
 
 class Singletons {
   static final _courseService = CourseServiceImpl();

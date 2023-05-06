@@ -1,7 +1,6 @@
 import 'package:classifyme/bootstrap.dart';
 import 'package:classifyme/classifyme/classifyme.dart';
-import 'package:classifyme/utils/constants.dart';
-import 'package:classifyme/utils/singletons.dart';
+import 'package:classifyme/utils/_index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

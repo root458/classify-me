@@ -1,3 +1,5 @@
+part of classifyme_utils;
+
 class ClassifyMeValues {
   ClassifyMeValues({
     required this.baseDomain,

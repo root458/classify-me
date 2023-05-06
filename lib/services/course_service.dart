@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:classifyme/utils/network.dart';
+import 'package:classifyme/utils/_index.dart';
+
 
 abstract class CourseService {
   Future<void> getCourseRecommendations();

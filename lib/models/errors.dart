@@ -1,6 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'errors.freezed.dart';
+part of classifyme_models;
 
 @freezed
 class ClassifyMeValidationError with _$ClassifyMeValidationError {

@@ -1,8 +1,4 @@
-import 'dart:io';
-
-import 'package:classifyme/models/errors.dart';
-import 'package:classifyme/utils/constants.dart';
-import 'package:dio/dio.dart';
+part of classifyme_utils;
 
 class NetworkUtil {
   factory NetworkUtil() => _networkUtil;
