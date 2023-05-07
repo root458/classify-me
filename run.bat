@@ -8,6 +8,7 @@ if "%1"=="dev" goto dev
 if "%1"=="staging" goto staging
 if "%1"=="prod" goto prod
 if "%1"=="clean" goto clean
+if "%1"=="build" goto build
 if "%1"=="localize" goto localize
 
 goto :eof
@@ -42,6 +43,10 @@ goto :eof
 
 :clean
 flutter clean
+goto :eof
+
+:build
+flutter build web --target .\lib\main_production.dart
 goto :eof
 
 :localize
