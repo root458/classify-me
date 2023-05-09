@@ -14,6 +14,7 @@ class StepOne extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final circlePositions =
         _generateCirclePositions(context, .684 * height, .845 * width);
+    final interestNotifier = Provider.of<InterestNotifier>(context);
     return Scaffold(
       backgroundColor: const Color(0xFFF1EAE0),
       body: SingleChildScrollView(
@@ -104,11 +105,13 @@ class StepOne extends StatelessWidget {
                     ),
                     minWidth: .191 * width,
                     height: .0698 * height,
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (context) => const StepTwo(),
-                      ),
-                    ),
+                    onPressed: interestNotifier.interest == Interest.none
+                        ? null
+                        : () => Navigator.of(context).push(
+                              MaterialPageRoute<void>(
+                                builder: (context) => const StepTwo(),
+                              ),
+                            ),
                     child: const Text(
                       '''Next''',
                       style: TextStyle(
