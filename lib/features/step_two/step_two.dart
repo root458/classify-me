@@ -16,13 +16,14 @@ class StepTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    final subjects = <Subject>[
-      const Subject(subject: 'Mathematics', grade: 'A'),
-      const Subject(subject: 'Physics', grade: 'A-'),
-      const Subject(subject: 'English', grade: 'B-'),
-      const Subject(subject: 'Biology', grade: 'A'),
-      const Subject(subject: 'Kiswahili', grade: 'B+'),
-      const Subject(subject: 'Chemistry', grade: 'A'),
+
+    final subjects = <String>[
+      'Mathematics',
+      'Physics',
+      'English',
+      'Biology',
+      'Kiswahili',
+      'Chemistry',
     ];
     return Scaffold(
       backgroundColor: const Color(0xFF412294),
@@ -61,6 +62,14 @@ class StepTwo extends StatelessWidget {
             ),
             SizedBox(height: .015 * height),
             SizedBox(height: .0698 * height),
+            const Text(
+              '''Tap to update!''',
+              style: TextStyle(
+                fontFamily: 'InterLight',
+                color: Color(0xFFF1EAE0),
+                fontSize: 15,
+              ),
+            ),
             // MaterialButton(
             //   color: const Color(0xFF356BA3),
             //   shape: RoundedRectangleBorder(
@@ -89,8 +98,7 @@ class StepTwo extends StatelessWidget {
                 children: [
                   for (final subject in subjects)
                     SubjectItem(
-                      subject: subject.subject,
-                      grade: subject.grade,
+                      subject: subject,
                     ),
                 ],
               ),
