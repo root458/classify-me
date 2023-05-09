@@ -10,4 +10,10 @@ class Singletons {
           ),
         ),
       ];
+
+  static List<ChangeNotifierProvider> registerNotifiers() => [
+        ChangeNotifierProvider<InterestNotifier>(
+          create: (context) => InterestNotifier(),
+        ),
+      ];
 }
