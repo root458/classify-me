@@ -1,6 +1,9 @@
 part of classifyme_notifiers;
 
 class SubjectsNotifier extends ChangeNotifier {
+  bool _goodToGo = false;
+  bool get goodToGo => _goodToGo;
+
   Map<String, String> _subjects = {
     'Mathematics': '__',
     'Physics': '__',
@@ -14,6 +17,10 @@ class SubjectsNotifier extends ChangeNotifier {
 
   void setSubjectGrade(String subject, String grade) {
     _subjects[subject] = grade;
+
+    if (!_subjects.values.any((element) => element == '__')) {
+      _goodToGo = true;
+    }
     notifyListeners();
   }
 }
