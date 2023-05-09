@@ -60,23 +60,24 @@ class StepTwo extends StatelessWidget {
               ),
             ),
             SizedBox(height: .015 * height),
-            MaterialButton(
-              color: const Color(0xFF356BA3),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              minWidth: .191 * width,
-              height: .0698 * height,
-              onPressed: () {},
-              child: const Text(
-                '''+ Add subject''',
-                style: TextStyle(
-                  fontFamily: 'InterLight',
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 20,
-                ),
-              ),
-            ),
+            SizedBox(height: .0698 * height),
+            // MaterialButton(
+            //   color: const Color(0xFF356BA3),
+            //   shape: RoundedRectangleBorder(
+            //     borderRadius: BorderRadius.circular(8),
+            //   ),
+            //   minWidth: .191 * width,
+            //   height: .0698 * height,
+            //   onPressed: () {},
+            //   child: const Text(
+            //     '''+ Add subject''',
+            //     style: TextStyle(
+            //       fontFamily: 'InterLight',
+            //       color: Color(0xFFFFFFFF),
+            //       fontSize: 20,
+            //     ),
+            //   ),
+            // ),
             SizedBox(height: .06 * height),
             SizedBox(
               height: .347 * height,
