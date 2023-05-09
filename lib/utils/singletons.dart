@@ -15,5 +15,8 @@ class Singletons {
         ChangeNotifierProvider<InterestNotifier>(
           create: (context) => InterestNotifier(),
         ),
+        ChangeNotifierProvider<SubjectsNotifier>(
+          create: (context) => SubjectsNotifier(),
+        ),
       ];
 }

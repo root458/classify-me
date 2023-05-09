@@ -4,3 +4,4 @@ import 'package:classifyme/utils/_index.dart';
 import 'package:flutter/widgets.dart';
 
 part 'interest_notifier.dart';
+part 'subjects_notifier.dart';
