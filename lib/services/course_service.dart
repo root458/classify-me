@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:classifyme/utils/_index.dart';
 
-
 abstract class CourseService {
   Future<void> getCourseRecommendations();
   Future<void> setInterests();
