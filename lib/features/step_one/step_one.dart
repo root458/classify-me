@@ -1,6 +1,9 @@
 import 'package:classifyme/features/step_two/step_two.dart';
+import 'package:classifyme/notifiers/_index.dart';
+import 'package:classifyme/utils/_index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class StepOne extends StatelessWidget {
   const StepOne({super.key});
@@ -49,6 +52,7 @@ class StepOne extends StatelessWidget {
                       child: InterestItem(
                         height: height,
                         title: 'Pharmacy',
+                        interestValue: Interest.pharmacy,
                       ),
                     ),
                     Positioned(
@@ -57,6 +61,7 @@ class StepOne extends StatelessWidget {
                       child: InterestItem(
                         height: height,
                         title: 'Surgery',
+                        interestValue: Interest.surgery,
                       ),
                     ),
                     Positioned(
@@ -65,6 +70,7 @@ class StepOne extends StatelessWidget {
                       child: InterestItem(
                         height: height,
                         title: 'Laboratories',
+                        interestValue: Interest.laboratories,
                       ),
                     ),
                     Positioned(
@@ -73,6 +79,7 @@ class StepOne extends StatelessWidget {
                       child: InterestItem(
                         height: height,
                         title: 'Nursing',
+                        interestValue: Interest.nursing,
                       ),
                     ),
                     Positioned(
@@ -81,6 +88,7 @@ class StepOne extends StatelessWidget {
                       child: InterestItem(
                         height: height,
                         title: 'Physiotherapy',
+                        interestValue: Interest.physiotherapy,
                       ),
                     ),
                   ],
@@ -137,44 +145,43 @@ class StepOne extends StatelessWidget {
   }
 }
 
-class InterestItem extends StatefulWidget {
+class InterestItem extends StatelessWidget {
   const InterestItem({
     super.key,
     required this.height,
     required this.title,
+    required this.interestValue,
   });
 
   final double height;
   final String title;
+  final Interest interestValue;
 
-  @override
-  State<InterestItem> createState() => _InterestItemState();
-}
-
-class _InterestItemState extends State<InterestItem> {
-  bool _selected = false;
   @override
   Widget build(BuildContext context) {
+    final interestNotifier = Provider.of<InterestNotifier>(context);
     return MaterialButton(
-      color: _selected ? const Color(0xFF412294) : const Color(0xFFF1EAE0),
+      color: interestNotifier.interest == interestValue
+          ? const Color(0xFF412294)
+          : const Color(0xFFF1EAE0),
       shape: const CircleBorder(
         side: BorderSide(
           width: 2,
           color: Color(0xFF412294),
         ),
       ),
-      minWidth: .324 * widget.height,
-      height: .324 * widget.height,
+      minWidth: .324 * height,
+      height: .324 * height,
       onPressed: () {
-        setState(() {
-          _selected = !_selected;
-        });
+        interestNotifier.setInterest(interestValue);
       },
       child: Text(
-        widget.title,
+        title,
         style: TextStyle(
           fontFamily: 'InterLight',
-          color: _selected ? const Color(0xFFF1EAE0) : const Color(0xFF412294),
+          color: interestNotifier.interest == interestValue
+              ? const Color(0xFFF1EAE0)
+              : const Color(0xFF412294),
           fontSize: 20,
         ),
       ),
