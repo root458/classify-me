@@ -128,3 +128,5 @@ app.*.map.json
 *.g.dart
 *.freezed.dart
 lib/generated/*
+.firebase/hosting.YnVpbGQ.cache
+.firebase/hosting.YnVpbGRcd2Vi.cache
