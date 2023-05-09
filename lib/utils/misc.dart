@@ -12,6 +12,7 @@ class Misc {
     'D': 3,
     'D-': 2,
     'E': 1,
+    '_': 0,
   };
   static int getPoints(String grade) {
     return points[grade]!;
