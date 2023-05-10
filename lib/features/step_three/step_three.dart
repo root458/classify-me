@@ -1,5 +1,63 @@
+import 'package:classifyme/features/step_three/cubit/get_course_recommendation_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+class StepThreeTrigger extends StatefulWidget {
+  const StepThreeTrigger({
+    super.key,
+    required this.interest,
+    required this.subjectPerformance,
+  });
+
+  final String interest;
+  final Map<String, int> subjectPerformance;
+
+  @override
+  State<StepThreeTrigger> createState() => _StepThreeTriggerState();
+}
+
+class _StepThreeTriggerState extends State<StepThreeTrigger> {
+  @override
+  void initState() {
+    context
+        .read<GetCourseRecommendationCubit>()
+        .getCourseRecommendation(widget.subjectPerformance, widget.interest);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<GetCourseRecommendationCubit,
+        GetCourseRecommendationState>(
+      builder: (context, state) {
+        return state.maybeWhen(
+            loading: () => StepThreeLoading(),
+            orElse: () => StepThreeLoading());
+      },
+    );
+  }
+}
+
+class StepThreeLoading extends StatelessWidget {
+  const StepThreeLoading({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF412294),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircularProgressIndicator(
+            color: Color(0xFFF1EAE0),
+            strokeWidth: 4,
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class StepThree extends StatelessWidget {
   const StepThree({super.key});
