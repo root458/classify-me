@@ -46,14 +46,30 @@ class StepThreeLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF412294),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircularProgressIndicator(
-            color: Color(0xFFF1EAE0),
-            strokeWidth: 4,
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              '''Please wait...''',
+              style: TextStyle(
+                fontFamily: 'InterLight',
+                color: Color(0xFFF1EAE0),
+                fontSize: 30,
+              ),
+            ),
+            SizedBox(height: 40),
+            SizedBox(
+              height: 200,
+              width: 200,
+              child: CircularProgressIndicator(
+                color: Color(0xFFF1EAE0),
+                strokeWidth: 4,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
