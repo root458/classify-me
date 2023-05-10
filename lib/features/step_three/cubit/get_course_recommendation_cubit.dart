@@ -16,7 +16,10 @@ class GetCourseRecommendationCubit extends Cubit<GetCourseRecommendationState> {
 
   late CourseService _courseService;
 
-  Future<void> getCourseRecommendation() async {
+  Future<void> getCourseRecommendation(
+    Map<String, int> subjectPerformance,
+    String interest,
+  ) async {
     emit(const GetCourseRecommendationState.loading());
     try {
       // ignore: unused_local_variable
