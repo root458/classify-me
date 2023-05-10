@@ -23,4 +23,15 @@ class SubjectsNotifier extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  Map<String, int> getSubjectPerformance() {
+    return {
+      'Mathematics': Misc.getPoints(_subjects['Mathematics']!),
+      'Physics': Misc.getPoints(_subjects['Physics']!),
+      'English': Misc.getPoints(_subjects['English']!),
+      'Biology': Misc.getPoints(_subjects['Biology']!),
+      'Kiswahili': Misc.getPoints(_subjects['Kiswahili']!),
+      'Chemistry': Misc.getPoints(_subjects['Chemistry']!),
+    };
+  }
 }
