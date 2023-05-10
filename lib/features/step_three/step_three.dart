@@ -1,7 +1,10 @@
 import 'package:classifyme/features/step_three/cubit/get_course_recommendation_cubit.dart';
+import 'package:classifyme/notifiers/_index.dart';
+import 'package:classifyme/utils/_index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class StepThreeTrigger extends StatefulWidget {
   const StepThreeTrigger({
@@ -90,6 +93,8 @@ class StepThree extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+    final subjectsNotifier = Provider.of<SubjectsNotifier>(context);
+    final interestNotifier = Provider.of<InterestNotifier>(context);
 
     return Scaffold(
       backgroundColor: const Color(0xFF412294),
@@ -208,6 +213,8 @@ class StepThree extends StatelessWidget {
                   minWidth: .191 * width,
                   height: .0698 * height,
                   onPressed: () {
+                    interestNotifier.setInterest(Interest.none);
+                    subjectsNotifier.resetPerformances();
                     Navigator.of(context)
                       ..pop()
                       ..pop()

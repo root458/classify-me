@@ -88,8 +88,8 @@ class StepOne extends StatelessWidget {
                       top: circlePositions[4].dy,
                       child: InterestItem(
                         height: height,
-                        title: 'Physiotherapy',
-                        interestValue: Interest.physiotherapy,
+                        title: 'Therapy',
+                        interestValue: Interest.therapy,
                       ),
                     ),
                   ],

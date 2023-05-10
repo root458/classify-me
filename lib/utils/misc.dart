@@ -30,8 +30,8 @@ class Misc {
         return 'Nursing';
       case Interest.pharmacy:
         return 'Pharmacy';
-      case Interest.physiotherapy:
-        return 'Physiotherapy';
+      case Interest.therapy:
+        return 'Therapy';
       case Interest.surgery:
         return 'Surgery';
     }

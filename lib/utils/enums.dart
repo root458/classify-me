@@ -5,6 +5,6 @@ enum Interest {
   pharmacy,
   surgery,
   laboratories,
-  physiotherapy,
+  therapy,
   nursing,
 }

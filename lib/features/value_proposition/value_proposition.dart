@@ -36,7 +36,7 @@ class ValueProposition extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      '''Welcome aboard, Jepkorir!''',
+                      '''Welcome aboard!''',
                       style: TextStyle(
                         fontFamily: 'InterSemiBold',
                         color: Color(0xFFFFFFFF),

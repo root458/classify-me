@@ -34,4 +34,16 @@ class SubjectsNotifier extends ChangeNotifier {
       'Chemistry': Misc.getPoints(_subjects['Chemistry']!),
     };
   }
+
+  void resetPerformances() {
+    _subjects = {
+      'Mathematics': '__',
+      'Physics': '__',
+      'English': '__',
+      'Biology': '__',
+      'Kiswahili': '__',
+      'Chemistry': '__',
+    };
+    notifyListeners();
+  }
 }
