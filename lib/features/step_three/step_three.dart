@@ -32,8 +32,11 @@ class _StepThreeTriggerState extends State<StepThreeTrigger> {
         GetCourseRecommendationState>(
       builder: (context, state) {
         return state.maybeWhen(
-            loading: () => StepThreeLoading(),
-            orElse: () => StepThreeLoading());
+          loaded: (courses) => StepThree(
+            courses: courses,
+          ),
+          orElse: () => StepThreeLoading(),
+        );
       },
     );
   }
@@ -76,7 +79,12 @@ class StepThreeLoading extends StatelessWidget {
 }
 
 class StepThree extends StatelessWidget {
-  const StepThree({super.key});
+  const StepThree({
+    super.key,
+    required this.courses,
+  });
+
+  final List<String> courses;
 
   @override
   Widget build(BuildContext context) {
@@ -135,9 +143,9 @@ class StepThree extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
-                            '''1. Clinical medicine''',
+                            '1. ${courses[0]}',
                             style: TextStyle(
                               fontFamily: 'InterSemiBold',
                               color: Color(0xFFF1EAE0),
@@ -146,7 +154,7 @@ class StepThree extends StatelessWidget {
                           ),
                           SizedBox(height: 10),
                           Text(
-                            '''2. Public health''',
+                            '2. ${courses[1]}',
                             style: TextStyle(
                               fontFamily: 'InterSemiBold',
                               color: Color(0xFFF1EAE0),
@@ -155,7 +163,7 @@ class StepThree extends StatelessWidget {
                           ),
                           SizedBox(height: 10),
                           Text(
-                            '''3. Medical laboratory science''',
+                            '3. ${courses[2]}',
                             style: TextStyle(
                               fontFamily: 'InterSemiBold',
                               color: Color(0xFFF1EAE0),
