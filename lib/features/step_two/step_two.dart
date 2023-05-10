@@ -1,6 +1,7 @@
 import 'package:classifyme/features/step_three/step_three.dart';
 import 'package:classifyme/features/step_two/widgets/subject_item.dart';
 import 'package:classifyme/notifiers/_index.dart';
+import 'package:classifyme/utils/misc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +20,7 @@ class StepTwo extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     final subjectsNotifier = Provider.of<SubjectsNotifier>(context);
+    final interestNotifier = Provider.of<InterestNotifier>(context);
 
     final subjects = <String>[
       'Mathematics',
@@ -120,7 +122,12 @@ class StepTwo extends StatelessWidget {
                   onPressed: subjectsNotifier.goodToGo
                       ? () => Navigator.of(context).push(
                             MaterialPageRoute<void>(
-                              builder: (context) => const StepThree(),
+                              builder: (context) => StepThreeTrigger(
+                                interest:
+                                    Misc.getInterest(interestNotifier.interest),
+                                subjectPerformance:
+                                    subjectsNotifier.getSubjectPerformance(),
+                              ),
                             ),
                           )
                       : null,
