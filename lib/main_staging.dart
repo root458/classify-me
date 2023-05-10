@@ -16,7 +16,7 @@ Future<void> main() async {
 
   ClassifyMeConfig(
     values: ClassifyMeValues(
-      baseDomain: 'http://127.0.0.1:8000',
+      baseDomain: 'http://127.0.0.1:5000',
     ),
   );
 
