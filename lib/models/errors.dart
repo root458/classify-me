@@ -42,4 +42,9 @@ class Failure implements Exception {
 
     return List.castFrom<dynamic, String>(_errors);
   }
+
+  @override
+  String toString() {
+    return 'Error: $message';
+  }
 }
