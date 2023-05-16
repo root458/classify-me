@@ -149,31 +149,21 @@ class StepThree extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            '1. ${courses[0]}',
-                            style: TextStyle(
-                              fontFamily: 'InterSemiBold',
-                              color: Color(0xFFF1EAE0),
-                              fontSize: 30,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            '2. ${courses[1]}',
-                            style: TextStyle(
-                              fontFamily: 'InterSemiBold',
-                              color: Color(0xFFF1EAE0),
-                              fontSize: 30,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            '3. ${courses[2]}',
-                            style: TextStyle(
-                              fontFamily: 'InterSemiBold',
-                              color: Color(0xFFF1EAE0),
-                              fontSize: 30,
-                            ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              for (final course in courses)
+                                Text(
+                                  '${courses.indexOf(course) + 1}. $course',
+                                  style: TextStyle(
+                                    fontFamily: 'InterSemiBold',
+                                    color: Color(0xFFF1EAE0),
+                                    fontSize: 30,
+                                  ),
+                                ),
+                              SizedBox(height: 10),
+                            ],
                           ),
                         ],
                       ),

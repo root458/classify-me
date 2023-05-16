@@ -46,7 +46,7 @@ flutter clean
 goto :eof
 
 :build
-flutter build web --target .\lib\main_production.dart
+flutter build web --target .\lib\main_production.dart --web-renderer html
 goto :eof
 
 :localize

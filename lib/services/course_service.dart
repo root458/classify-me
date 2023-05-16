@@ -14,17 +14,16 @@ NetworkUtil _networkUtil = NetworkUtil();
 class CourseServiceImpl implements CourseService {
   @override
   Future<Recommendations> getCourseRecommendations(UserData userData) async {
-    // ignore: unused_local_variable
     final _endpointUrl = '/recommendations';
 
     try {
-      // final _resp = await _networkUtil.postReq(
-      //   _endpointUrl,
-      //   body: json.encode(
-      //     userData.toJson(),
-      //   ),
-      // );
-      return Recommendations.fromJson({});
+      final _resp = await _networkUtil.postReq(
+        _endpointUrl,
+        body: json.encode(
+          userData.toJson(),
+        ),
+      );
+      return Recommendations.fromJson(_resp);
     } on SocketException {
       throw ('Check network connection!');
     } catch (e) {

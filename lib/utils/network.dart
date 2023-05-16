@@ -7,16 +7,12 @@ class NetworkUtil {
 
   static final NetworkUtil _networkUtil = NetworkUtil.internal();
 
-  static String _getBearerToken() {
-    return '';
-  }
-
   Dio _getHttpClient() {
     final _dio = Dio(
       BaseOptions(
         baseUrl: ClassifyMeConfig.instance!.values.baseDomain,
         contentType: 'application/json',
-        headers: <String, dynamic>{'Accept': 'application/json'},
+        headers: <String, dynamic>{'Accept': '*/*'},
         connectTimeout: 60 * 1000,
         receiveTimeout: 60 * 1000,
       ),
@@ -25,16 +21,10 @@ class NetworkUtil {
     _dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
-          options.headers['Authorization'] = 'Bearer ${_getBearerToken()}';
           return handler.next(options);
         },
       ),
     );
-    // (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-    //     (client) {
-    //   client.badCertificateCallback =
-    //       ((X509Certificate cert, String host, int port) => true);
-    // };
     return _dio;
   }
 
