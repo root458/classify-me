@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:classifyme/features/step_three/cubit/get_course_recommendation_cubit.dart';
 import 'package:classifyme/notifiers/_index.dart';
 import 'package:classifyme/utils/_index.dart';
@@ -96,6 +97,15 @@ class StepThree extends StatelessWidget {
     final subjectsNotifier = Provider.of<SubjectsNotifier>(context);
     final interestNotifier = Provider.of<InterestNotifier>(context);
 
+    String coursesText = '';
+    for (final course in courses) {
+      if (courses.indexOf(course) == 0) {
+        coursesText += '${courses.indexOf(course) + 1}. $course';
+      } else {
+        coursesText += '\n${courses.indexOf(course) + 1}. $course';
+      }
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xFF412294),
       body: Column(
@@ -153,16 +163,23 @@ class StepThree extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              for (final course in courses)
-                                Text(
-                                  '${courses.indexOf(course) + 1}. $course',
-                                  style: TextStyle(
-                                    fontFamily: 'InterSemiBold',
-                                    color: Color(0xFFF1EAE0),
-                                    fontSize: 30,
+                              AnimatedTextKit(
+                                animatedTexts: [
+                                  TypewriterAnimatedText(
+                                    coursesText,
+                                    textStyle: const TextStyle(
+                                      fontFamily: 'InterSemiBold',
+                                      color: Color(0xFFF1EAE0),
+                                      fontSize: 30,
+                                    ),
+                                    speed: const Duration(milliseconds: 200),
                                   ),
-                                ),
-                              SizedBox(height: 10),
+                                ],
+                                totalRepeatCount: 1,
+                                pause: const Duration(microseconds: 1000),
+                                displayFullTextOnTap: true,
+                                stopPauseOnTap: true,
+                              ),
                             ],
                           ),
                         ],
