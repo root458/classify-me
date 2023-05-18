@@ -75,38 +75,72 @@ class StepTwo extends StatelessWidget {
                 fontSize: 15,
               ),
             ),
-            // MaterialButton(
-            //   color: const Color(0xFF356BA3),
-            //   shape: RoundedRectangleBorder(
-            //     borderRadius: BorderRadius.circular(8),
-            //   ),
-            //   minWidth: .191 * width,
-            //   height: .0698 * height,
-            //   onPressed: () {},
-            //   child: const Text(
-            //     '''+ Add subject''',
-            //     style: TextStyle(
-            //       fontFamily: 'InterLight',
-            //       color: Color(0xFFFFFFFF),
-            //       fontSize: 20,
-            //     ),
-            //   ),
-            // ),
             SizedBox(height: .06 * height),
-            SizedBox(
-              height: .347 * height,
-              width: .44 * width,
-              child: GridView.count(
-                crossAxisCount: 2,
-                childAspectRatio: 3.3,
-                mainAxisSpacing: 5,
-                children: [
-                  for (final subject in subjects)
-                    SubjectItem(
-                      subject: subject,
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: .347 * height,
+                  width: .44 * width,
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    childAspectRatio: 3.3,
+                    mainAxisSpacing: 5,
+                    children: [
+                      for (final subject in subjects)
+                        SubjectItem(
+                          subject: subject,
+                        ),
+                    ],
+                  ),
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Overall Grade',
+                      style: const TextStyle(
+                        fontFamily: 'InterSemiBold',
+                        color: Color(0xFFFFFFFF),
+                        fontSize: 20,
+                      ),
                     ),
-                ],
-              ),
+                    SizedBox(height: 10),
+                    Container(
+                      height: 50,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF1EAE0),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        controller: TextEditingController()..addListener(() {}),
+                        cursorColor: Color(0xFFEB8054),
+                        decoration: InputDecoration(
+                          fillColor: Color(0xFFF1EAE0),
+                          hintText: 'Overall grade',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide(
+                              color: Color(0xFFEB8054),
+                              width: 0.5,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide(
+                              color: Color(0xFFEB8054),
+                              width: 1.5,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
             SizedBox(height: .06 * height),
             Row(
