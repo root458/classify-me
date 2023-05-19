@@ -10,6 +10,7 @@ if "%1"=="prod" goto prod
 if "%1"=="clean" goto clean
 if "%1"=="build" goto build
 if "%1"=="localize" goto localize
+if "%1"=="firebase" goto firebase
 
 goto :eof
 
@@ -51,4 +52,8 @@ goto :eof
 
 :localize
 flutter gen-l10n
+goto :eof
+
+:firebase
+..\..\Firebase\firebase-win.exe
 goto :eof
