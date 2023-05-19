@@ -107,7 +107,7 @@ class StepThree extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: const Color(0xFF412294),
+      backgroundColor: const Color(0xFFF1EAE0),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,7 +131,7 @@ class StepThree extends StatelessWidget {
                   '''Well,\nhere we are...''',
                   style: TextStyle(
                     fontFamily: 'InterSemiBold',
-                    color: Color(0xFFF1EAE0),
+                    color: Color(0xFF412294),
                     fontSize: 50,
                   ),
                 ),
@@ -140,9 +140,9 @@ class StepThree extends StatelessWidget {
                 height: .5192 * height,
                 width: .642 * width,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF512ABA),
+                  color: const Color(0xFFF4E2CA),
                   border: Border.all(
-                    color: const Color(0xFFF1EAE0),
+                    color: const Color(0xFF412294),
                   ),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8),
@@ -169,7 +169,7 @@ class StepThree extends StatelessWidget {
                                     coursesText,
                                     textStyle: const TextStyle(
                                       fontFamily: 'InterSemiBold',
-                                      color: Color(0xFFF1EAE0),
+                                      color: Color(0xFF412294),
                                       fontSize: 30,
                                     ),
                                     speed: const Duration(milliseconds: 200),
@@ -208,7 +208,7 @@ class StepThree extends StatelessWidget {
                   '''We think you’ll make a great match!''',
                   style: TextStyle(
                     fontFamily: 'InterLight',
-                    color: Color(0xFFF1EAE0),
+                    color: Color(0xFF412294),
                     fontSize: 15,
                   ),
                 ),
@@ -259,9 +259,11 @@ class StepThreeLoading extends StatelessWidget {
     final interestNotifier = Provider.of<InterestNotifier>(context);
 
     String coursesText = ' ';
+    // Cream: Color(0xFFF1EAE0)
+    // Purple: Color(0xFF412294)
 
     return Scaffold(
-      backgroundColor: const Color(0xFF412294),
+      backgroundColor: const Color(0xFFF1EAE0),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,7 +287,7 @@ class StepThreeLoading extends StatelessWidget {
                   '''Well,\nhere we are...''',
                   style: TextStyle(
                     fontFamily: 'InterSemiBold',
-                    color: Color(0xFFF1EAE0),
+                    color: Color(0xFF412294),
                     fontSize: 50,
                   ),
                 ),
@@ -294,9 +296,9 @@ class StepThreeLoading extends StatelessWidget {
                 height: .5192 * height,
                 width: .642 * width,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF512ABA),
+                  color: const Color(0xFFF4E2CA),
                   border: Border.all(
-                    color: const Color(0xFFF1EAE0),
+                    color: const Color(0xFF412294),
                   ),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8),
@@ -323,7 +325,7 @@ class StepThreeLoading extends StatelessWidget {
                                     coursesText,
                                     textStyle: const TextStyle(
                                       fontFamily: 'InterSemiBold',
-                                      color: Color(0xFFF1EAE0),
+                                      color: Color(0xFF412294),
                                       fontSize: 30,
                                     ),
                                     speed: const Duration(milliseconds: 2000),
@@ -362,7 +364,7 @@ class StepThreeLoading extends StatelessWidget {
                   '''We think you’ll make a great match!''',
                   style: TextStyle(
                     fontFamily: 'InterLight',
-                    color: Color(0xFFF1EAE0),
+                    color: Color(0xFF412294),
                     fontSize: 15,
                   ),
                 ),

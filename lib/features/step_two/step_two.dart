@@ -30,8 +30,11 @@ class StepTwo extends StatelessWidget {
       'Kiswahili',
       'Chemistry',
     ];
+
+    // Purple: Color(0xFF412294)
+    // Cream: Color(0xFFF1EAE0)
     return Scaffold(
-      backgroundColor: const Color(0xFF412294),
+      backgroundColor: const Color(0xFFF1EAE0),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: .0984 * width),
         child: Column(
@@ -46,7 +49,7 @@ class StepTwo extends StatelessWidget {
                   '''Help us help you!''',
                   style: TextStyle(
                     fontFamily: 'InterSemiBold',
-                    color: Color(0xFFF1EAE0),
+                    color: Color(0xFF412294),
                     fontSize: 50,
                   ),
                 ),
@@ -61,7 +64,7 @@ class StepTwo extends StatelessWidget {
               '''Tell us about your grades''',
               style: TextStyle(
                 fontFamily: 'InterLight',
-                color: Color(0xFFF1EAE0),
+                color: Color(0xFF412294),
                 fontSize: 20,
               ),
             ),
@@ -71,7 +74,7 @@ class StepTwo extends StatelessWidget {
               '''Tap to update!''',
               style: TextStyle(
                 fontFamily: 'InterLight',
-                color: Color(0xFFF1EAE0),
+                color: Color(0xFF412294),
                 fontSize: 15,
               ),
             ),
@@ -102,7 +105,7 @@ class StepTwo extends StatelessWidget {
                       'Overall Grade',
                       style: const TextStyle(
                         fontFamily: 'InterSemiBold',
-                        color: Color(0xFFFFFFFF),
+                        color: Color(0xFF412294),
                         fontSize: 20,
                       ),
                     ),

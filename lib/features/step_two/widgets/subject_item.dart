@@ -33,7 +33,7 @@ class SubjectItem extends StatelessWidget {
     ];
 
     return PopupMenuButton<String>(
-      color: Color(0xFFF1EAE0),
+      color: Color(0xFF412294),
       elevation: 2,
       position: PopupMenuPosition.under,
       itemBuilder: (context) => [
@@ -43,7 +43,7 @@ class SubjectItem extends StatelessWidget {
             value: grade,
             child: Text(
               grade,
-              style: TextStyle(color: Color(0xFF512ABA)),
+              style: TextStyle(color: Color(0xFFF1EAE0)),
             ),
           ),
       ],
@@ -59,7 +59,7 @@ class SubjectItem extends StatelessWidget {
             subject,
             style: const TextStyle(
               fontFamily: 'InterSemiBold',
-              color: Color(0xFFFFFFFF),
+              color: Color(0xFF412294),
               fontSize: 20,
             ),
           ),
@@ -68,7 +68,7 @@ class SubjectItem extends StatelessWidget {
             subjectsNotifier.subjects[subject]!,
             style: const TextStyle(
               fontFamily: 'InterSemiBold',
-              color: Color(0xFFFFFFFF),
+              color: Color(0xFF412294),
               fontSize: 20,
             ),
           ),
